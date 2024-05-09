@@ -1,0 +1,17 @@
+body{
+    background: #e7b3e7;
+}
+
+main {
+/*  roughly 640pixels  */
+width: 40em;
+
+/*  fixed center  */
+/*   margin: 0 auto; */
+margin-inline: auto;
+}
+
+main img {
+    width: 100%;
+    display: block;
+  }
