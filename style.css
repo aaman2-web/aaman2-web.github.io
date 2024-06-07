@@ -1,17 +1,122 @@
-body{
-    background: #e7b3e7;
+/* IMPORT FONTS */
+@import url('https://fonts.googleapis.com/css2?family=League+Spartan:wght@100..900&family=Lexend:wght@100..900&display=swap');
+
+
+/* CSS VARIABLES */
+
+
+:root {
+  /* color var */
+
+  /* color set 1 */
+  --colorR1: rgb(100, 53, 53);
+  --colorR2: rgb(141, 84, 84);
+  --colorR3: rgb(186, 128, 128);
+
+  /* color set 2 */
+  --colorG1: rgb(84, 141, 97);
+  --colorG2: rgb(117, 165, 105);
+  --colorG3: rgb(128, 186, 134);
+
+  /* color set 3 */
+  --colorP1: rgb(116, 84, 141);
+  --colorP2: rgb(127, 105, 165);
+  --colorP3: rgb(164, 128, 186);
+
+
+  /* font var */
+  --font1: "Lexend", sans-serif;
+  --font2: "League Spartan", sans-serif;
 }
+
+
+
+/* DIAGNOSTIC STYLING */
+/* * {
+  border: peachpuff dotted 2px;
+} */
+
 
 main {
-/*  roughly 640pixels  */
-width: 40em;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
 
-/*  fixed center  */
-/*   margin: 0 auto; */
-margin-inline: auto;
+  font-family: var(--font1);
 }
 
-main img {
-    width: 100%;
-    display: block;
+article {
+  /*  background image */
+  background-image: url("https://assets.codepen.io/16425/paper.png");
+}
+
+/* on hover left colum, no background image */
+article:hover {
+  background-image: none;
+}
+
+h1{
+  color: var(--colorP1);
+  font-family: var(--font2);
+}
+
+h2 {
+  color: var(--colorG3);
+  font-family: var(--font2);
+}
+
+/* Article */
+article {
+  display: flex;
+  flex-direction: column;
+  /* main axis   */
+  justify-content: center;
+  /* cross axis   */
+  align-items: center;
+
+  padding: 1em;
+}
+
+/* aside image */
+aside img {
+  width: 100%;
+  max-width: 100%;
+
+  /* full height     */
+  height: 100vh;
+  object-fit: cover;
+}
+
+
+/* links */
+a:link,
+a:visited {
+  color: var(--colorR1);
+  text-decoration: none;
+  margin: 0 0.25em;
+}
+
+a:hover,
+a:active {
+  border-bottom: 4px solid var(--colorR3);
+}
+
+@media (max-width: 480px) {
+  body {
+    background: var(--colorP3);
   }
+
+  main {
+    grid-template-columns: 1fr;
+  }
+
+  article nav a {
+    display: block;
+    margin: 1em 0 1em 0;
+  }
+
+  p span {
+    float: none;
+    font-size: 1.5em;
+  }
+}
+
